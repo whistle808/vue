@@ -3,10 +3,8 @@ import VueRouter from 'vue-router';
 
 // 导入index组件
 import Cindex from '../component/index/index.vue';
-import Cnews from '../component/index/news.vue';
-import Csports from '../component/index/sports.vue';
-import Cvideos from '../component/index/videos.vue';
-
+import CnewList from '../component/news/list.vue';
+import Cnewdetails from '../component/news/details.vue';
 
 // 导出一个路由实例
 export default new VueRouter({
@@ -19,16 +17,12 @@ export default new VueRouter({
             component: Cindex
         },
         {
-            path: '/news',
-            component: Cnews
+            path: '/news/list',
+            component: CnewList
         },
         {
-            path: '/sports',
-            component: Csports
-        },
-        {
-            path: '/videos',
-            component: Cvideos
+            path: '/news/details/:id',
+            component: Cnewdetails 
         }
 
     ]

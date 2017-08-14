@@ -2,19 +2,7 @@
   <main>
     <v-header>
     </v-header>
-    <router-link to='/index'>
-      <span>index</span>
-    </router-link>
-    <router-link to='/news'>
-      <span>news</span>
-    </router-link>
-    <router-link to='/sports'>
-      <span>sports</span>
-    </router-link>
-    <router-link to='/videos'>
-      <span>videos</span>
-    </router-link>
-  
+ 
     <router-view>
     </router-view>
   

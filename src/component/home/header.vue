@@ -1,6 +1,7 @@
 <template>
-  <section> 
-      <p>这是app的头部</p>
+  <section class="header"> 
+      <mt-header fixed title="微商"></mt-header>
+      <div></div>
   </section> 
 </template>
 
@@ -10,8 +11,12 @@ export default {
 }
 </script>
 
-<script>
-
-</script>
+<style lang="less">
+  .header{
+    div{
+      height: 40px;
+    }
+  }
+</style>
 
 

@@ -39,10 +39,10 @@ module.exports = {
                 ]
             },
             {
-                 test:/\.(png|gif|jpg)$/,
+                 test:/\.(png|gif|jpg|ttf)$/,
                  use:[
                      {loader: 'url-loader', options: { limit : 5000}},
-                     'image-webpack-loader'
+                    //  'image-webpack-loader'
                  ]
             },
             {
