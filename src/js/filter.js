@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-Vue.filter('formatDate',function(val,format){
+Vue.filter('formatDate',function(val,format=("YYYY-MM-DD")){
 
     // 先创建三个不同匹配的正则
     let yReg = /YYYY/i;

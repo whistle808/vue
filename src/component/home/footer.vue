@@ -1,5 +1,6 @@
 <template>
-  <section>
+  <section class="footer">
+    <div></div>
     <nav class="mui-bar mui-bar-tab">
       <a class="mui-tab-item mui-active" href="#tabbar">
         <span class="mui-icon mui-icon-home"></span>
@@ -30,7 +31,10 @@ export default {
 </script>
 
 <style lang="less">
-
+ .footer div{
+   width:100%;
+   height:40px;
+ }
 </style>
 
 

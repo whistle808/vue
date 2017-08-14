@@ -1,5 +1,5 @@
 <template>
-    <section class="mint-header">
+    <section class="mint-header   hahah">
         <div @click='rollback' class="mint-header-button is-left">
             <button class="mint-button mint-button--default mint-button--normal">
                 <span class="mint-button-icon">
@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style lang="less">
+.hahah{
+    background-color: #fff;
+    color: #26a2ff;
+}
 .list {
     background-color: #ccc;
     border-bottom: 1px solid #888;
