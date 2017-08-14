@@ -3,8 +3,10 @@
     <div></div>
     <nav class="mui-bar mui-bar-tab">
       <a class="mui-tab-item mui-active" href="#tabbar">
+        <router-link to='/'>
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
+        </router-link>
       </a>
       <a class="mui-tab-item" href="#tabbar-with-chat">
         <span class="mui-icon mui-icon-extra mui-icon-extra-gift"></span>
