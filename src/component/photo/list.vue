@@ -3,26 +3,28 @@
         <!--图片导航  -->
         <ul class="photoNav">
             <li>
-                 <router-link to="/photo/list/0"> 
+                <router-link to="/photo/list/0">
                     全部
-                 </router-link> 
+                </router-link>
             </li>
             <li v-for="item in categoryList" :key="item.id">
                 <router-link :to="'/photo/list/'+item.id">
-                {{item.title}}
+                    {{item.title}}
                 </router-link>
             </li>
         </ul>
         <!--图片列表  -->
         <div class="mui-card" v-for="item in photoList" :key="item.id">
-            <div class="mui-card-header mui-card-media" :style="getStyle(item)"></div>
-
-            <div class="mui-card-content">
-                <div class="mui-card-content-inner">
-                    <p>{{item.title}}</p>
-                    <p style="color: #333;">{{item.zhaiyao}}</p>
+            <router-link :to="'/api/getimageInfo/'+item.id">
+                <div class="mui-card-header mui-card-media" :style="getStyle(item)"></div>
+    
+                <div class="mui-card-content">
+                    <div class="mui-card-content-inner">
+                        <p>{{item.title}}</p>
+                        <p style="color: #333;">{{item.zhaiyao}}</p>
+                    </div>
                 </div>
-            </div>
+            </router-link>
         </div>
     </section>
 </template>
@@ -33,11 +35,11 @@ export default {
     data() {
         return {
             categoryList: [],
-            photoList:[]
+            photoList: []
         }
     },
     watch: {
-        $route(){
+        $route() {
             this.getPhoto(this.$route.params.id);
         }
     },
@@ -45,32 +47,32 @@ export default {
         getCategory() {
             let url = newsConfig.getPNav;
             this.$http.get(url).then(req => {
-                console.log("43");
-                    let body = req.body;
+                // console.log("43");
+                let body = req.body;
                 if (body.status == 0) {
                     // console.log("43");   
                     this.categoryList = body.message;
                 }
             })
         },
-        getPhoto(id){
-            let url = newsConfig.getPhoto +"/"+ id;
+        getPhoto(id) {
+            let url = newsConfig.getPhoto + "/" + id;
             console.log(url);
-            this.$http.get(url).then(req=>{
+            this.$http.get(url).then(req => {
                 let body = req.body;
-                if(body.status == 0){
-                    console.log(body.message);
-                    this.photoList = 
-                   this.photoList = body.message.map(function(photo,i){
-                        photo.img_url = newsConfig.imgDomain + photo.img_url;
-                    return photo;
-                   });
-                   console.log(this.photoList);
+                if (body.status == 0) {
+                    // console.log(body.message);
+                    this.photoList =
+                        this.photoList = body.message.map(function (photo, i) {
+                            photo.img_url = newsConfig.imgDomain + photo.img_url;
+                            return photo;
+                        });
+                    // console.log(this.photoList);
 
                 }
             })
         },
-        getStyle(item){
+        getStyle(item) {
             return "height:40vw;background-image:url(" + item.img_url + ")"
         }
     },
@@ -103,8 +105,8 @@ export default {
             }
         }
     }
-    .mui-card{
-        clear:both;
+    .mui-card {
+        clear: both;
     }
 }
 </style>

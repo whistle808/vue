@@ -11,6 +11,7 @@ import Cnewdetails from '../component/news/details.vue';
 // 图片模块的组件
 import CphotoList from '../component/photo/list.vue';
 import CphotoTails from '../component/photo/details.vue';
+// import CphotoInfo from '../component/photo/'
 
 // 导出一个路由实例
 export default new VueRouter({
@@ -35,9 +36,10 @@ export default new VueRouter({
             component: CphotoList
         },
         {
-            path: '/photo/details/:id',
+            path: '/api/getimageInfo/:id',
             component: CphotoTails 
-        }
+        },
+      
 
     ]
 });

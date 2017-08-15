@@ -13,5 +13,8 @@ export default {
 
     // 图片接口的url
     getPNav: domain + '/api/getimgcategory',
-    getPhoto: domain + "/api/getimages"
+    getPhoto: domain + "/api/getimages",
+
+    getPhotoInfo:  domain + '/api/getimageInfo',
+    getHums: domain + '/api/getthumimages'
 }
