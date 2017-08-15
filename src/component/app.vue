@@ -24,3 +24,11 @@ export default {
 }
 </script>
 
+<style lang="less">
+  body{
+    touch-action: none;
+    // overflow: hidden;
+  }
+</style>
+
+

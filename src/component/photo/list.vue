@@ -1,18 +1,20 @@
 <template>
     <section class="photoList">
         <!--图片导航  -->
-        <ul class="photoNav">
-            <li>
-                <router-link to="/photo/list/0">
-                    全部
-                </router-link>
-            </li>
-            <li v-for="item in categoryList" :key="item.id">
-                <router-link :to="'/photo/list/'+item.id">
-                    {{item.title}}
-                </router-link>
-            </li>
-        </ul>
+        <div id="wrapper">
+            <ul class="photoNav">
+                <li>
+                    <router-link to="/photo/list/0">
+                        全部
+                    </router-link>
+                </li>
+                <li v-for="item in categoryList" :key="item.id">
+                    <router-link :to="'/photo/list/'+item.id">
+                        {{item.title}}
+                    </router-link>
+                </li>
+            </ul>
+        </div>
         <!--图片列表  -->
         <div class="mui-card" v-for="item in photoList" :key="item.id">
             <router-link :to="'/api/getimageInfo/'+item.id">
@@ -31,6 +33,7 @@
 
 <script>
 import newsConfig from "../../js/config.js";
+import IScroll from 'iscroll';
 export default {
     data() {
         return {
@@ -52,6 +55,11 @@ export default {
                 if (body.status == 0) {
                     // console.log("43");   
                     this.categoryList = body.message;
+                    this.$el.querySelector("#wrapper ul").style.width = 100 * this.categoryList.length + "px";
+                    var myScroll = new IScroll('#wrapper',{
+                        scrollY:false,
+                        scrollX:true
+                    });
                 }
             })
         },
@@ -84,21 +92,27 @@ export default {
 </script>
 
 <style scoped lang="less">
-.photoList {
-    // width:100%;
+#wrapper {
+    position: relative;
+    overflow: hidden;
     .photoNav {
         // overflow: hidden;   
         list-style: none; // width: 200%;
-        height: 28px;
+        width: 1200px;
+        height: 40px;
         margin: 0;
         padding: 0;
         padding: 2px;
+        line-height: 40px;
+        text-align: center;
+        margin-top: 5px 0 0 0;
         li {
             box-sizing: border-box;
             height: 28px;
+            width:88px;
             line-height: 28px;
             float: left;
-            margin-right: 5px;
+            margin-right: 2px;
             color: #26a2ff;
             &:hover {
                 border-bottom: 2px solid #26a2ff;
