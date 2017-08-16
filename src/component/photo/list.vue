@@ -18,7 +18,9 @@
         <!--图片列表  -->
         <div class="mui-card" v-for="item in photoList" :key="item.id">
             <router-link :to="'/api/getimageInfo/'+item.id">
-                <div class="mui-card-header mui-card-media" :style="getStyle(item)"></div>
+                <div class="mui-card-header ljztp">
+                    <img v-lazy="item.img_url">
+                </div>
     
                 <div class="mui-card-content">
                     <div class="mui-card-content-inner">
@@ -121,6 +123,13 @@ export default {
     }
     .mui-card {
         clear: both;
+    }
+}
+
+.ljztp{
+    img{
+        width:100%;
+        height:100%;
     }
 }
 </style>

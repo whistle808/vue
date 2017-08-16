@@ -4,6 +4,9 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import mintUI from 'mint-ui';
 
+import vuePicturePreview from 'vue-picture-preview';
+import VueLazyload from "vue-lazyload";
+
 
 
 import 'mint-ui/lib/style.css';
@@ -14,6 +17,11 @@ import 'mui/examples/hello-mui/css/icons-extra.css'; // 引入mui的扩展图标
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(mintUI);
+
+Vue.use(vuePicturePreview);
+Vue.use(VueLazyload, {
+try: 2 // 这个是加载图片数量
+})
 // 二、导入自己的组件
 // 2.1导入自己的组件
 import App from '../component/app.vue';
