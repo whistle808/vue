@@ -4,12 +4,12 @@
         <div id="wrapper">
             <ul class="photoNav">
                 <li>
-                    <router-link to="/photo/list/0">
+                    <router-link :to="{name:'photoL', params:{id: 0 }}">
                         全部
                     </router-link>
                 </li>
                 <li v-for="item in categoryList" :key="item.id">
-                    <router-link :to="'/photo/list/'+item.id">
+                    <router-link :to="{name:'photoL',params:{id: item.id} }">
                         {{item.title}}
                     </router-link>
                 </li>
@@ -100,20 +100,20 @@ export default {
         list-style: none; // width: 200%;
         width: 1200px;
         height: 40px;
-        margin: 0;
-        padding: 0;
         padding: 2px;
         line-height: 40px;
         text-align: center;
-        margin-top: 5px 0 0 0;
+        margin: 5px 0 0 0 !important;
         li {
             box-sizing: border-box;
-            height: 28px;
+            height: 40px;
             width:88px;
-            line-height: 28px;
+            line-height: 40px;
+             border-radius: 10px;
             float: left;
             margin-right: 2px;
             color: #26a2ff;
+            background-color: snow;        
             &:hover {
                 border-bottom: 2px solid #26a2ff;
             }

@@ -25,19 +25,23 @@ export default new VueRouter({
         },
         {
             path: '/news/list',
-            component: CnewList
+            component: CnewList,
+            name:"newsL"
         },
         {
             path: '/news/details/:id',
-            component: Cnewdetails 
+            component: Cnewdetails ,
+            name:"newsD"
         },
         {
             path: '/photo/list/:id',
-            component: CphotoList
+            component: CphotoList,
+            name:"photoL"
         },
         {
             path: '/api/getimageInfo/:id',
-            component: CphotoTails 
+            component: CphotoTails,
+            name:"photoD"
         },
       
 

@@ -2,13 +2,13 @@
     <section>
         <ul class="mui-table-view mui-grid-view mui-grid-9">
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-                <router-link to="/news/list">
+                <router-link :to="{name:'newsL'}">
                     <span class="mui-icon-extra mui-icon-extra-new"></span>
                     <div class="mui-media-body">新闻咨询</div>
                 </router-link>
             </li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-                 <router-link to="/photo/list/0">
+                 <router-link :to="{name:'photoL',params:{id: 0 }}">
                     <span class="mui-icon mui-icon-image">
                         <span class="mui-badge">5</span>
                     </span>
